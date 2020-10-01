@@ -1,0 +1,9 @@
+<div *ngFor="let text of  textService.texts">
+  <h1> {{ text.some_text }} </h1>
+</div>
+
+<form #textForm="ngForm" (ngSubmit)="postText(textForm)">
+  <label for="some_text">First name:</label><br>
+  <input type="text" id="some_text" name="some_text" #name="ngModel" [(ngModel)]="textService.selectedText.some_text"><br>
+  <input type="submit" value="Submit">
+</form>
